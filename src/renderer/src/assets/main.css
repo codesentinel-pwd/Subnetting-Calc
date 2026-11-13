@@ -1,0 +1,213 @@
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+  background: #202020;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* ---------- subnet list ---------- */
+.list {
+  flex: 1;
+  overflow-y: auto;
+  margin-top: 4px;
+  padding-right: 6px;
+  scrollbar-gutter: stable;
+  position: relative;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 14px 1fr;
+  column-gap: 10px;
+  align-items: center;
+  height: 26px;
+  box-sizing: border-box;
+  padding: 0 10px;
+  margin-bottom: 2px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background 0.12s;
+}
+
+.row.alt {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.row:hover {
+  background: rgba(76, 194, 255, 0.14);
+}
+
+.row.copied {
+  background: #1f4d3a;
+}
+
+.row .dash {
+  opacity: 0.35;
+  text-align: center;
+}
+
+/* ---------- custom scrollbar ---------- */
+.list::-webkit-scrollbar {
+  width: 12px;
+}
+
+.list::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 4px 0;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background: #4a4a4a;
+  border-radius: 8px;
+  border: 3px solid transparent; /* makes the thumb look slim */
+  background-clip: padding-box;
+}
+
+.list::-webkit-scrollbar-thumb:hover {
+  background: #4cc2ff;
+  background-clip: padding-box;
+}
+
+.list::-webkit-scrollbar-thumb:active {
+  background: #2f9fd8;
+  background-clip: padding-box;
+}
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.tab {
+  background: #2b2b2b;
+  color: #bbb;
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 5px 14px;
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.tab:hover {
+  background: #353535;
+}
+
+.tab.on {
+  background: #4cc2ff;
+  border-color: #4cc2ff;
+  color: #000;
+  font-weight: bold;
+}
+
+.pin {
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 5px 10px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: inherit;
+}
+/* center the dash: start IP hugs it from the left, end IP from the right */
+/* .row > span:first-child {
+  text-align: right;
+}
+
+.row > span:last-child {
+  text-align: left;
+} */
+
+.row .dash {
+  text-align: center;
+}
+
+
+
+
+/* column labels above the list */
+.head {
+  display: grid;
+  grid-template-columns: 1fr 14px 1fr;
+  column-gap: 10px;
+  padding: 6px 10px 4px;
+  margin-right: 18px; /* matches the scrollbar gutter so labels line up with rows */
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #4cc2ff;
+  opacity: 0.85;
+  border-top: 1px solid #3a3a3a;
+}
+
+/* .head > span:first-child {
+  text-align: right;
+} */
+
+/* .head > span:last-child {
+  text-align: left;
+} */
+
+/* .head.v6 {
+  grid-template-columns: 1fr;
+}
+
+.head.v6 > span {
+  text-align: left;
+} */
+/* IPv6 rows: two stacked lines instead of the 3-column grid */
+/* .row.v6 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1px;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+.row.v6 > span:first-child,
+.row.v6 > span:last-child {
+  text-align: left;
+} */
+
+/* .row.v6 .end {
+  opacity: 0.55;
+  font-size: 11px;
+} */
+
+/* start IP on the left, dash in the middle, end IP on the right */
+.row,
+.head {
+  display: grid;
+  grid-template-columns: 1fr 14px 1fr;
+  column-gap: 10px;
+}
+
+.row > span:first-child,
+.head > span:first-child {
+  text-align: left;
+}
+
+.row > span:last-child,
+.head > span:last-child {
+  text-align: right;
+}
+
+.row .dash {
+  text-align: center;
+  opacity: 0.35;
+}
+
+/* IPv6 uses smaller text so two full addresses fit */
+.row.wide {
+  font-size: 12px;
+}
+
+.head.wide {
+  font-size: 11px;
+}
