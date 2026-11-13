@@ -1,6 +1,3 @@
-# Subnetting-Calc
-Portable Windows subnet calculator. Enter an IP and CIDR to instantly get network details. No installation needed.
-
 # 🧮 Subnet Calc
 
 A simple desktop subnet calculator for Windows. Enter an IP address and CIDR prefix and instantly get the full network breakdown. No installation required.
