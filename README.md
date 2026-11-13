@@ -2,7 +2,7 @@
 
 A simple desktop subnet calculator for Windows. Enter an IP address and CIDR prefix and instantly get the full network breakdown. No installation required.
 
-![Subnet Calc Screenshot]
+
 
 ## ✨ Features
 
